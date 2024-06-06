@@ -1,0 +1,59 @@
+
+<style>
+    .table {
+
+        width: 100%;
+    }
+
+    td {
+        text-align: center;
+
+    }
+    .cabezera {
+        background-color: #0E3D38;
+        padding: 10px;
+    }
+    #fondo-fijo{
+                            position:absolute;
+                            opacity: 0.3;
+                            width: 40%;
+                            display: flex;
+
+top: 50%;
+
+left: 50%;
+
+transform: translate(-50%, -50%);
+                        }
+</style>
+ 
+<p class="text-center font-weight-bold cabezera"> Generar Solicitud</p>
+<div class="card-container">
+    
+
+ <img id="fondo-fijo" src="../../../assets/img/fondologo.png" alt="">
+    <table datatable   [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of solicitudVisualizar ">
+
+
+                <td *ngIf="item.sose_atendido == '0' ">N0 ATENDIDO</td>
+                <td *ngIf="item.sose_atendido == '1' ">ATENDIDO</td>
+
+                <td>{{item.serv_nombre}}</td>
+                <td>{{item.soli_fechasolicitud}}</td>
+                <td>{{item.soli_numero}}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+</div>
+
